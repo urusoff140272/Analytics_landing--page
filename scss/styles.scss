@@ -2,9 +2,14 @@
 @import "./base/normalize", "./base/fonts", "./base/mixins", "./base/media", "./base/variables", "./base/base", "./base/grid";
 
 // ----blocks---
-@import "./bloks/top";
-@import "./bloks/header";
+@import "./bloks/intro";
 @import "./bloks/logo";
+@import "./bloks/features";
+@import "./bloks/roadmap";
+@import "./bloks/pricing";
+@import "./bloks/footer";
+
+
 
 
 
