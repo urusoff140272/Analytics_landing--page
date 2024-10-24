@@ -25,25 +25,78 @@
         background-color: $red;
         clip-path: polygon(0 0, 100% 0, 100% 74%, 0% 100%);
     }
+
+    @include desktop {
+        &::after,
+        &::before {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+    }
+
+    @include tablet {
+        &::after,
+        &::before {
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+        }
+    }
+
+    @include mobile {
+        &::after,
+        &::before {
+            clip-path: polygon(0 0, 100% 0, 100% 94%, 0% 100%);
+        }
+    }
 }
 
 .header {
     position: relative;
     z-index: 10;
-    padding-block: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include tablet {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    @include mobile {
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
 
     &__body {
         display: flex;
         align-items: center;
+
+        @include tablet {
+            row-gap: 20px;
+            column-gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        @include mobile {
+            column-gap: 5px;
+        }
     }
 
     &__menu {
         flex-grow: 1;
+        overflow-y: auto;
 
         &-list {
             display: flex;
             align-items: center;
             gap: 36px;
+            
+
+            @include tablet {
+                justify-content: space-between;
+            }
+
+            @include mobile{
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         &-link {
@@ -66,6 +119,26 @@
                 }
             }
         }
+
+        @include mobile{
+            display: block;
+            position: absolute;
+            top: 76px;
+            left: -100%;
+            transition: left var(--transition);
+            transform: translateX(-50%);
+
+            padding: 20px;
+            color: $text-light;
+            background-color: $blue;
+            min-width: 200px;
+            height: 400%;
+            
+        }
+    }
+
+    &__btns {
+        margin: 0 auto;
     }
 
     &__button {
@@ -81,6 +154,14 @@
         @include hover {
             @include btn($text-light, transparent, 68px, $text-light, 16px, 10px, 33px);
         }
+
+        @include mobile {
+            @include btn(transparent, transparent, 68px, $text-secondary, 16px, 10px, 15px);
+
+            @include hover {
+                @include btn($text-light, transparent, 68px, $text-light, 16px, 10px, 15px);
+            }
+        }
     }
 }
 
@@ -90,8 +171,24 @@
     padding-top: 102px;
     padding-bottom: 258px;
 
+    @include tablet {
+        flex-direction: column-reverse;
+        padding-top: 85px;
+        gap: 210px;
+    }
+
+    @include mobile {
+        padding-top: 0;
+        padding-bottom: 125px;
+        gap: 30px;
+    }
+
     &__info {
         max-width: 550px;
+
+        @include tablet {
+            margin: 0 auto;
+        }
 
         &-title {
             position: relative;
@@ -123,11 +220,27 @@
                 background: url(/img/header/bg-2.svg) no-repeat;
                 clip-path: polygon(0 0, 100% 0, 100% 80%, 0 95%);
             }
+
+            @include mobile {
+                &::after,
+                &::before {
+                    display: none;
+                }
+            }
         }
 
         &-text {
             font-size: 18px;
             margin-bottom: 49px;
+
+            @include mobile {
+                margin-bottom: 25px;
+                p {
+                    spam {
+                        display: none;
+                    }
+                }
+            }
         }
 
         &-button {
@@ -135,6 +248,10 @@
 
             @include hover {
                 @include btn($red, transparent, 68px, $text-light, 16px, 15px, 80px);
+            }
+
+            @include tablet {
+                width: 100%;
             }
         }
     }
@@ -155,11 +272,29 @@
             box-shadow: 0 18px 50px -15px rgba(25, 42, 89, 0.2);
             background: url(/img/header/big.png) no-repeat;
         }
+
+        @include mobile {
+            margin: 0 auto;
+
+            &::before {
+                display: none;
+            }
+        }
     }
 
     &__img {
         margin-top: 47px;
         box-shadow: 0 19px 53px -16px rgba(25, 42, 89, 0.2);
         border-radius: 32px;
+
+        @include mobile {
+            margin-top: 25px;
+            width: 335px;
+            height: auto;
+        }
     }
+}
+
+.header__menu.active {
+    left: 50%;
 }

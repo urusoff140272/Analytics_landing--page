@@ -3,6 +3,20 @@
     align-items: center;
     gap: 13px;
     margin-right: 95px;
+
+    @include tablet {
+        margin-right: 36px;
+    }
+
+    @include mobile{
+        flex-grow: 1;
+        margin-right: 0;
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
     svg {
         color: $red;
     }
@@ -13,6 +27,10 @@
         font-weight: 900;
         color: $text-light;
         transition: var(--transition);
+
+        @include tablet{
+            font-size: 16px;
+        }
     }
 
     @include hover {

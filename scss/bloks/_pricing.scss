@@ -1,6 +1,11 @@
 .main__pricing {
     margin-top: 76px;
+
+    @include mobile{
+        margin-top: 48px;
+    }
 }
+
 .bg{
     position: relative;
     z-index: 1;
@@ -14,6 +19,10 @@
         height: 1004px;
         z-index: -1;
         background: url(/img/footer/bg.svg) no-repeat;
+
+        @include mobile{
+            display: none;
+        }
     }
 }
 
@@ -22,6 +31,15 @@
     z-index: 1;
     padding-top: 246px;
     padding-bottom: 100px;
+
+    @include tablet{
+        padding-top: 215px;
+    }
+
+    @include mobile{
+        padding-top: 93px;
+        padding-bottom: 48px;
+    }
 
     &::after {
         content: "";
@@ -35,6 +53,18 @@
         height: auto;
         background-color: $dark-blue;
         clip-path: polygon(0 20.5%, 100% 0, 100% 100%, 0% 100%);
+
+        @include tablet{
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        @include mobile{
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        @include mobile-s{
+            clip-path: polygon(0 5.5%, 100% 0, 100% 100%, 0% 100%);
+        }
     }
 
     &::before {
@@ -47,12 +77,32 @@
         height: 100%;
         background-color: $red;
         clip-path: polygon(0 20.5%, 100% 0, 100% 100%, 0% 100%);
+
+        @include tablet{
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        @include mobile{
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        @include mobile-s{
+            clip-path: polygon(0 5.5%, 100% 0, 100% 100%, 0% 100%);
+        }
     }
 
     &__title {
         text-align: center;
         color: $text-light;
         margin-bottom: 30px;
+
+        @include mobile{
+            margin-bottom: 15px;
+        }
+
+        @include mobile-s{
+            text-align: left;
+        }
     }
 
     &__text {
@@ -63,6 +113,15 @@
             margin: 0 auto;
             max-width: 650px;
         }
+
+        @include mobile{
+            font-size: 14px;
+            margin-bottom: 49px;
+        }
+
+        @include mobile-s{
+            text-align: left;
+        }
     }
 
     &__list {
@@ -71,24 +130,56 @@
         display: flex;
         justify-content: space-between;
         column-gap: 50px;
+
+        @include desktop{
+            column-gap: 20px;
+            scroll-snap-type: x mandatory;
+            // scroll-padding: 50%;
+            overflow-x: auto;
+            width: 100vw;
+        }
     }
 
     &__item {
-        max-width: 340px;
+        min-width: 340px;
         border-radius: 30px;
         box-shadow: 0 18px 50px -15px rgba(25, 42, 89, 0.2);
         background: #0f1f4b;
         text-align: center;
-        padding: 46px 60px 68px;
+        padding-top: 45px;
+        padding-bottom: 68px;
+
+        @include desktop{
+            scroll-snap-stop: always;
+            scroll-snap-align: center;
+            &:last-child{
+                margin-right: 40px;
+            }
+        }
+
+        @include mobile{
+            min-width: 280px;
+            padding-top: 31px;
+            padding-bottom: 47px;
+        }
 
         &-title {
             color: $text-light;
             margin-bottom: 5px;
+
+            @include mobile{
+                margin-bottom: 2px;
+            }
         }
 
         &-text {
             font-size: 18px;
             margin-bottom: 37px;
+
+            @include mobile{
+                font-size: 13px;
+                margin-bottom: 30px;
+            }
         }
 
         &-line {
@@ -97,6 +188,10 @@
             height: 1px;
             background: #2a407c;
             margin-bottom: 19px;
+
+            @include mobile{
+                margin-bottom: 16px;
+            }
         }
 
         &-price {
@@ -107,12 +202,21 @@
             span {
                 font-size: 60px;
             }
+
+            @include mobile{
+                line-height: 1.1;
+            }
         }
 
         &-subtitle {
             font-size: 16px;
             line-height: 1.4;
             margin-bottom: 40px;
+
+            @include mobile{
+                font-size: 13px;
+                margin-bottom: 32px;
+            }
         }
 
         &-btn {

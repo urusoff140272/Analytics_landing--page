@@ -87,19 +87,19 @@ h4, .h4 {
 
 .hidden-mobile {
     @include mobile {
-        display: none !important;
+        display: none;
     }
 }
 
 .visible-mobile {
     @include mobile-above {
-        display: none !important;
+        display: none;
     }
 }
 
 .header__burger {
     position: relative;
-    width: 30px;
+    width: 25px;
     height: 18px;
 
     &-icon,
