@@ -206,7 +206,7 @@
                 left: -310px;
                 width: 660px;
                 height: 660px;
-                background: url(/img/header/bg-1.svg) no-repeat;
+                background: url(../img/header/bg-1.svg) no-repeat;
             }
 
             &::before {
@@ -217,7 +217,7 @@
                 left: 310px;
                 width: 1438px;
                 height: 798px;
-                background: url(/img/header/bg-2.svg) no-repeat;
+                background: url(../img/header/bg-2.svg) no-repeat;
                 clip-path: polygon(0 0, 100% 0, 100% 80%, 0 95%);
             }
 
@@ -270,7 +270,7 @@
             height: 554px;
             border-radius: 30px;
             box-shadow: 0 18px 50px -15px rgba(25, 42, 89, 0.2);
-            background: url(/img/header/big.png) no-repeat;
+            background: url(../img/header/big.png) no-repeat;
         }
 
         @include mobile {
