@@ -1,0 +1,77 @@
+.main__roadmap{
+    margin-top: 70px;
+
+    @include tablet{
+        margin-top: 12px;
+    }
+}
+
+.roadmap{
+    padding-top: 30px;
+    padding-bottom: 56px;
+
+    &__list{
+        >*:not(:last-child){
+            margin-bottom: 120px;
+        }
+
+        @include tablet{
+            >*:not(:last-child){
+                margin-bottom: 54px;
+            }
+        }
+    }
+
+    &__descrption{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+
+        @include tablet{
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    &__descrption_accent{
+        flex-direction: row-reverse;
+
+        @include tablet{
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    &__text-block{
+        max-width: 480px;
+    }
+
+    &__title{
+        margin-bottom: 30px;
+        line-height: 1.2;
+
+        @include tablet{
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text{
+        font-size: 18px;
+
+        @include mobile{
+            font-size: 14px;
+        }
+    }
+
+    &__picture{
+        max-width: 600px;
+    }
+
+    &__image{
+        box-shadow: 0 18px 50px -15px rgba(25, 42, 89, 0.2);
+        border-radius: 30px;
+        width: 100%;
+        height: auto;
+    }
+}

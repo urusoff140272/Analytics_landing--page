@@ -1,0 +1,15 @@
+.header {
+  padding-block: 50px;
+}
+.header__body {
+  display: flex;
+  align-items: center;
+}
+.header__menu {
+  flex-grow: 1;
+}
+.header__menu-list {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}/*# sourceMappingURL=intro.css.map */

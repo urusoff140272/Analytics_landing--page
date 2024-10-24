@@ -1,0 +1,40 @@
+.footer {
+    padding-bottom: 98px;
+    background-color: $dark-blue;
+
+    @include mobile{
+        padding-bottom: 46px;
+    }
+
+    &__body {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #2a407c;
+        padding-top: 65px;
+
+        @include mobile{
+            padding-top: 43px;
+        }
+    }
+
+    &__menu-list {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        font-size: 14px;
+
+        &-item {
+            position: relative;
+            z-index: 10;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+}
