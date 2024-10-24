@@ -18,7 +18,7 @@
         width: 1005px;
         height: 1004px;
         z-index: -1;
-        background: url(/img/footer/bg.svg) no-repeat;
+        background: url(../img/footer/bg.svg) no-repeat;
 
         @include mobile{
             display: none;
